@@ -24,19 +24,35 @@ org 0060h
 PREMIO1:
     DB "$"
     DB 00h
-	org 0070h ;Marca null no fim da String
+org 0070h ;Marca null no fim da String
 PREMIO2:
     DB "$"
     DB 00h ;Marca null no fim da String
-	org 0070h ;Marca null no fim da String
+org 0070h ;Marca null no fim da String
 PREMIO3:
     DB "$"
     DB 00h ;Marca null no fim da String
-	org 0070h ;Marca null no fim da String
+org 0070h ;Marca null no fim da String
 PREMIO4:
     DB "$"
     DB 00h ;Marca null no fim da String
-	org 0070h ;Marca null no fim da String
+org 0070h ;Marca null no fim da String
+PREMIO5:
+    DB "$"
+    DB 00h ;Marca null no fim da String
+org 0070h ;Marca null no fim da String
+PREMIO6:
+    DB "$"
+    DB 00h ;Marca null no fim da String
+org 0070h ;Marca null no fim da String
+PREMIO7:
+    DB "$"
+    DB 00h ;Marca null no fim da String
+org 0070h ;Marca null no fim da String
+PREMIO8:
+    DB "$"
+    DB 00h ;Marca null no fim da String
+org 0070h ;Marca null no fim da String
 ;MAIN
 org 0100h
 START:
@@ -60,20 +76,36 @@ main:
     ACALL posicionaCursor
     MOV DPTR, #PREMIO1 ; Endereço inicial da string PREMIOS
     ACALL escreveStringROM
-	MOV A, #42H;#04Eh ; Seta endereço de memória para a próxima linha do LCD
+MOV A, #42H;#04Eh ; Seta endereço de memória para a próxima linha do LCD
     ACALL posicionaCursor
     MOV DPTR, #PREMIO2 ; Endereço inicial da string PREMIOS
     ACALL escreveStringROM
-	MOV A, #44H;#04Eh ; Seta endereço de memória para a próxima linha do LCD
+MOV A, #44H;#04Eh ; Seta endereço de memória para a próxima linha do LCD
     ACALL posicionaCursor
     MOV DPTR, #PREMIO3 ; Endereço inicial da string PREMIOS
     ACALL escreveStringROM
-	MOV A, #46H;#04Eh ; Seta endereço de memória para a próxima linha do LCD
+MOV A, #46H;#04Eh ; Seta endereço de memória para a próxima linha do LCD
     ACALL posicionaCursor
     MOV DPTR, #PREMIO4 ; Endereço inicial da string PREMIOS
     ACALL escreveStringROM
-	
-	
+MOV A, #48H;#04Eh ; Seta endereço de memória para a próxima linha do LCD
+    ACALL posicionaCursor
+    MOV DPTR, #PREMIO5 ; Endereço inicial da string PREMIOS
+    ACALL escreveStringROM
+MOV A, #04Ah;#04Eh ; Seta endereço de memória para a próxima linha do LCD
+    ACALL posicionaCursor
+    MOV DPTR, #PREMIO6 ; Endereço inicial da string PREMIOS
+    ACALL escreveStringROM
+MOV A, #04Dh ; Seta endereço de memória para a próxima linha do LCD
+    ACALL posicionaCursor
+    MOV DPTR, #PREMIO7 ; Endereço inicial da string PREMIOS
+    ACALL escreveStringROM
+MOV A, #04Fh ; Seta endereço de memória para a próxima linha do LCD
+    ACALL posicionaCursor
+    MOV DPTR, #PREMIO7 ; Endereço inicial da string PREMIOS
+    ACALL escreveStringROM
+
+
     JMP $ ; Loop infinito
 
 escreveStringROM:
@@ -89,7 +121,7 @@ loop:
     JMP loop        ; repeat
 finish:
     RET
-    
+   
 ; initialise the display
 ; see instruction set for details
 lcd_init:
