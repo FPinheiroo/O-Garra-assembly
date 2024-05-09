@@ -95,7 +95,7 @@ main:
 button_check:
     MOV A, P2          ; Ler o estado atual dos pinos do Port 2
     JB ACC.7, check_p26 ; Se P2.7 não está pressionado, pular para verificar P2.6
-    ACALL hide_garra   ; Limpa a garra na posição 07h
+    ACALL clearTopDisplay ; Limpa a parte de cima do display
     SJMP button_check  ; Após ação, continue verificando botões
 check_p26:
     JB ACC.6, check_p25 ; Se P2.6 não está pressionado, pular para verificar P2.5
@@ -132,20 +132,22 @@ hide_garra:
     MOV DPTR, #SPACE  ; Espaço em branco para substituir a garra
     ACALL escreveStringROM
     RET
+    
+
 hide_garra1:
-    MOV A, #04H
+    MOV A, #44H
     ACALL posicionaCursor
     MOV DPTR, #SPACE  ; Espaço em branco para substituir a garra
     ACALL escreveStringROM
     RET
 hide_garra2:
-    MOV A, #06H
+    MOV A, #46H
     ACALL posicionaCursor
     MOV DPTR, #SPACE  ; Espaço em branco para substituir a garra
     ACALL escreveStringROM
     RET
 hide_garra3:
-    MOV A, #08H
+    MOV A, #48H
     ACALL posicionaCursor
     MOV DPTR, #SPACE  ; Espaço em branco para substituir a garra
     ACALL escreveStringROM
@@ -378,6 +380,22 @@ clearDisplay:
     DJNZ R6, rotC
     RET
 
+; Limpa a parte de cima do display (endereços de 00h a 15h)
+clearTopDisplay:
+    MOV A, #00h       ; Define o endereço inicial (00h)
+    ACALL posicionaCursor   ; Reposiciona o cursor para o início do display
+    MOV R6, #16        ; Define o número de caracteres na parte de cima do display (16 caracteres)
+clearLoop:
+    ACALL escreveCaracter   ; Escreve um espaço em branco para limpar o caractere atual
+    INC A            ; Incrementa o endereço do cursor para limpar o próximo caractere
+    DJNZ R6, clearLoop   ; Repete até limpar todos os caracteres na parte de cima do display
+    RET
+
+; Escreve um caractere na posição atual do cursor
+escreveCaracter:
+    MOV DPTR, #SPACE   ; Caractere de espaço em branco
+    ACALL escreveStringROM  ; Escreve o caractere na posição atual do cursor
+    RET
 
 delay:
     MOV R5,#40H
