@@ -1,5 +1,4 @@
 <h1 align="center">
-    <img src="https://hermes.dio.me/articles/cover/334a4648-799a-49c2-b551-0dc260949910.png" height="100px" ><br>
     Projeto assembly 👨‍💻​
 </h1>
 <h2>
