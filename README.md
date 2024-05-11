@@ -42,7 +42,7 @@ Define funções para posicionar o cursor em uma determinada posição no displa
 <li> Atraso:
 Fornece uma função de atraso para sincronização.
 </li><br>
-<img src="FLUXOGRAMA.png" alt = "fluxo" height="500px">
+<img src="Fluxo.png" alt = "fluxo" height="500px">
 
 <h2>
     Código Fonte:
