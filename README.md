@@ -39,7 +39,9 @@ Fornece funções para limpar o display LCD, tanto limpando todo o display quant
 Define funções para posicionar o cursor em uma determinada posição no display.</li>
 <li> Atraso:
 Fornece uma função de atraso para sincronização.
-</li>
+</li><br>
+<img src=".\imgs\Fluxograma.png" height="500px">
+
 <h2>
     Código Fonte:
 </h2>
@@ -47,7 +49,9 @@ Fornece uma função de atraso para sincronização.
 <p>https://github.com/FPinheiroo/trab-assembly2/blob/53719a097c22f0a563fd620e3e448db18a5ae0cd/pt1.asm</p>
 
 <h2>
-    Video da simulação:
+    Imagens e video da simulação:
 </h2>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/_BQeFO02hzA?si=W8xYskT5SmTRkrbB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-Link tambem: https://www.youtube.com/watch?v=_BQeFO02hzA
+<img src =".\imgs\tela edsim 1.png"><br><br>
+<img src=".\imgs\ed sim 2.png"><br><br>
+<p>Link tambem: https://www.youtube.com/watch?v=_BQeFO02hzA</p>
+
